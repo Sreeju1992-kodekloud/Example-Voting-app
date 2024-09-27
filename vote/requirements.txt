@@ -1,3 +1,5 @@
 Flask
 Redis
 gunicorn
+pytest
+pytest-flask
