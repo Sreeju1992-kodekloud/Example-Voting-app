@@ -1,2 +1,4 @@
 venv/
 .coverage
+.vscode
+__pycache__
