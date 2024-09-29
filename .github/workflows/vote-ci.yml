@@ -85,6 +85,8 @@ jobs:
         with:
           app: voteapp
           context: 'vote'
+          dockerfile: vote/Dockerfile
+
 
 
     
