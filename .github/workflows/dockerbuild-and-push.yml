@@ -49,6 +49,7 @@ jobs:
             context: ${{ inputs.context }}
             file: ${{ inputs.dockerfile }}
             push: false
+            load: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ inputs.app }}:${{ github.sha }}
 
         - name: Scan the Docker Image for any Vulnerability
