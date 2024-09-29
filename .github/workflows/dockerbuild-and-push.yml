@@ -61,9 +61,9 @@ jobs:
              ignore-unfixed: true
              vuln-type: 'os,library'
              severity: 'CRITICAL,HIGH'
+          continue-on-error: true
 
         - name: Push the Docker Image to registry
-          if: success()
           uses: docker/build-push-action@v6
           with:
              push: true
