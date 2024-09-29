@@ -5,13 +5,13 @@ on:
         branches: main
         paths: 
             - 'vote/**'
-            - '.github/workflows/vote-ci.yaml'
+            - '.github/workflows/vote-ci.yml'
 
     pull_request:
       branches: main
       paths: 
             - 'vote/**'
-            - '.github/workflows/vote-ci.yaml'
+            - '.github/workflows/vote-ci.yml'
 
 permissions: 
     contents: read
