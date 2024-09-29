@@ -7,9 +7,9 @@ on:
             - 'vote/**'
             - '.github/workflows/vote-ci.yaml'
 
-    pull_request: 
-        branches: main
-        paths:
+    pull_request:
+      branches: main
+      paths: 
             - 'vote/**'
             - '.github/workflows/vote-ci.yaml'
 
@@ -58,7 +58,7 @@ jobs:
             path: htmlcov/
 
         - name: SonarQube testing
-          uses: sonarsource/sonarqube-scan-action@v3.0.0
+          uses: sonarsource/sonarqube-scan-action@master
           env:
              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
              SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
@@ -67,7 +67,7 @@ jobs:
 
         - name: Check the Quality Gate status
           id: sonarqube-quality-gate-check
-          uses: sonarsource/sonarqube-quality-gate-action@v3.0.0
+          uses: sonarsource/sonarqube-quality-gate-action@master
           timeout-minutes: 5
           env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
