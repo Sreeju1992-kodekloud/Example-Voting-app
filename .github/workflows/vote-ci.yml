@@ -43,7 +43,7 @@ jobs:
 
         - name: Run Code coverage test
           run: |
-             pytest --cov=vote/app --cov-report xml --cov-report html vote/tests/
+             pytest --cov=vote --cov-report xml --cov-report html vote/tests/
 
         - name: Upload coverage.xml as artifacts
           uses: actions/upload-artifact@v4
@@ -72,6 +72,9 @@ jobs:
           env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          with:
+            scanMetadataReportFile: vote/.scannerwork/report-task.txt
+            pollingTimeoutSec: 300
 
     dockerbuild-and-deploy:
         needs: build-and-test
