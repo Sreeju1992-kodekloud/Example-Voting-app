@@ -64,9 +64,8 @@ jobs:
           continue-on-error: true
 
         - name: Push the Docker Image to registry
-          uses: docker/build-push-action@v6
-          with:
-             push: true
-             tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ inputs.app }}:${{ github.sha }}
+          run: |
+             docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ inputs.app }}:${{ github.sha }}
+             
           
           
