@@ -1,11 +1,7 @@
 name: Vote application workflow
 on:
     workflow_dispatch: 
-    push:
-        branches: main
-        paths: 
-            - 'vote/**'
-            - '.github/workflows/vote-ci.yml'
+
 
     pull_request:
       branches: main
