@@ -59,3 +59,6 @@ def test_voter_id_persists(client, mock_redis):
     # Ensure the same voter_id is retained
     assert voter_id in response.headers['Set-Cookie']
     assert b'Dogs' in response.data  # Check if the vote for Dogs is reflected
+
+
+    
