@@ -1,0 +1,22 @@
+name: Recieve repository dispatch event
+on:
+    workflow_dispatch:
+    repository_dispatch: 
+        types:
+            - dispatch-event
+
+jobs:
+    trigger-workflow:
+        name: Trigger workflow based on the event
+        runs-on: self-hosted
+        steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+          with:
+            ref: ${{ github.event.client_payload.branch }}
+
+
+        - name: Modify the test file
+          working-directory: apps/inventory
+          run: |
+            echo ${{ github.event.client_payload.message }} > test.txt
